@@ -166,7 +166,9 @@ More queries are in [`sql/analytics_queries.sql`](sql/analytics_queries.sql).
 ```text
 placement-analytics-dashboard/
 ├── dashboard/
-│   └── Placement Analytics Dashboard.pbix
+│   ├── Placement Analytics Dashboard.pbix
+│   ├── index.html
+│   └── pbip/
 ├── data/
 │   ├── applications.csv
 │   ├── companies.csv
@@ -187,7 +189,8 @@ placement-analytics-dashboard/
 │   └── schema.sql
 ├── LICENSE
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+└── run_project.py
 ```
 
 ## How to Run
@@ -207,7 +210,18 @@ python -m venv .venv
 python -m pip install -r requirements.txt
 ```
 
-### 2. Run the data generators
+### 2. Quickstart: Run Analytics & Launch Dashboard
+
+Run the master orchestrator to execute the SQL analytics engine and launch the interactive visual dashboard:
+
+```powershell
+python run_project.py
+```
+
+- To view the CLI analytics report only without opening the browser: `python run_project.py --cli`
+- To regenerate synthetic datasets before running analytics: `python run_project.py --generate`
+
+### 3. Run the data generators (Optional)
 
 The checked-in `students.csv` is an input; this repository has no script to generate student records. You can regenerate all dependent CSVs in sequence with a single command:
 
@@ -229,7 +243,7 @@ Do not run `genrate_students.py` as well; it is an alternative application gener
 
 To analyze the exact checked-in dataset instead, skip this step.
 
-### 3. Create the database
+### 4. Create the database (PostgreSQL)
 
 With PostgreSQL installed and `psql` available:
 
@@ -237,13 +251,13 @@ With PostgreSQL installed and `psql` available:
 psql -U postgres -c "CREATE DATABASE placement_analytics;"
 ```
 
-### 4. Run the schema
+### 5. Run the schema
 
 ```powershell
 psql -U postgres -d placement_analytics -f sql/schema.sql
 ```
 
-### 5. Import the CSVs
+### 6. Import the CSVs
 
 From the repository root, open a `psql` session:
 
@@ -262,7 +276,7 @@ Then run these `\copy` commands in the `psql` prompt, in order:
 \copy offers FROM 'data/offers.csv' WITH (FORMAT csv, HEADER true)
 ```
 
-### 6. Run the analytics queries
+### 7. Run the analytics queries
 
 Exit `psql`, then run:
 
@@ -270,7 +284,7 @@ Exit `psql`, then run:
 psql -U postgres -d placement_analytics -f sql/analytics_queries.sql
 ```
 
-### 7. Open and refresh the dashboard
+### 8. Open and refresh Power BI dashboard
 
 Open `dashboard/Placement Analytics Dashboard.pbix` in Power BI Desktop, configure its PostgreSQL data source to use the `placement_analytics` database, and select **Refresh**.
 

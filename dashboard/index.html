@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placement Analytics Dashboard | Executive Overview</title>
+  <meta name="description" content="Interactive Placement Analytics Dashboard with university recruitment KPIs, funnel progression, branch performance, and CTC distribution.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg-primary: #0a0e17;
+      --bg-surface: #111827;
+      --bg-card: rgba(17, 24, 39, 0.75);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(99, 102, 241, 0.3);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-indigo: #6366f1;
+      --accent-violet: #8b5cf6;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --gradient-brand: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      --gradient-card: linear-gradient(145deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.7) 100%);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 25px -5px rgba(99, 102, 241, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.10) 0%, transparent 45%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+
+    /* Header Bar */
+    header {
+      background: rgba(10, 14, 23, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 18px 40px;
+    }
+
+    .header-container {
+      max-width: 1480px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--gradient-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .brand-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: #ffffff;
+    }
+
+    .brand-title h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 30%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-title p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .header-badges {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+
+    .badge.live {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 8px currentColor;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 32px 40px;
+    }
+
+    /* Filters Bar */
+    .controls-panel {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 24px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .filter-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .pill-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .pill-btn.active {
+      background: var(--accent-indigo);
+      border-color: var(--accent-indigo);
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+    }
+
+    /* KPI Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    .kpi-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--card-accent, var(--gradient-brand));
+      opacity: 0.9;
+    }
+
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .kpi-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .kpi-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .kpi-value {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .kpi-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .kpi-badge-sub {
+      color: var(--accent-emerald);
+      font-weight: 700;
+    }
+
+    /* Content Layout Grids */
+    .dashboard-row {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .dashboard-row.equal {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-row.three-col {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (max-width: 1080px) {
+      .dashboard-row,
+      .dashboard-row.equal,
+      .dashboard-row.three-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Chart Cards */
+    .chart-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .chart-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+
+    .chart-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .chart-wrapper {
+      position: relative;
+      flex-grow: 1;
+      min-height: 280px;
+    }
+
+    /* Funnel Stage Cards */
+    .funnel-container {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .funnel-stage {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .funnel-stage:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--border-glow);
+    }
+
+    .funnel-stage-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: var(--stage-color, var(--accent-indigo));
+      opacity: 0.15;
+      z-index: 0;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .funnel-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stage-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stage-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--stage-color, var(--accent-indigo));
+    }
+
+    .stage-metrics {
+      text-align: right;
+    }
+
+    .stage-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .stage-pct {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Data Table Styling */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    th {
+      padding: 12px 16px;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .ctc-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.1);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    .progress-pill {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      overflow: hidden;
+      width: 100px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--gradient-brand);
+      border-radius: 9999px;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 1480px;
+      margin: 40px auto 0;
+      padding: 24px 40px 0;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    footer a {
+      color: var(--accent-indigo);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/></svg>
+        </div>
+        <div class="brand-title">
+          <h1>Placement Analytics Dashboard</h1>
+          <p>University Recruitment Performance & Compensation Intelligence</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <div class="badge live"><span class="badge-dot"></span> Live Engine</div>
+        <div class="badge">PostgreSQL & DuckDB</div>
+        <div class="badge">Power BI Model Sync</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Dashboard Content -->
+  <main>
+    <!-- Branch Filter Controls -->
+    <section class="controls-panel">
+      <div class="filter-label">Branch View:</div>
+      <div class="filter-pills" id="branch-filters">
+        <button class="pill-btn active" onclick="setBranchFilter('all')">All Branches</button>
+        <button class="pill-btn" onclick="setBranchFilter('1')">Branch 1 (CSE)</button>
+        <button class="pill-btn" onclick="setBranchFilter('2')">Branch 2 (IT)</button>
+        <button class="pill-btn" onclick="setBranchFilter('3')">Branch 3 (EE)</button>
+        <button class="pill-btn" onclick="setBranchFilter('4')">Branch 4 (ECE)</button>
+        <button class="pill-btn" onclick="setBranchFilter('5')">Branch 5 (ME)</button>
+      </div>
+    </section>
+
+    <!-- Top KPI Grid -->
+    <section class="kpi-grid">
+      <div class="kpi-card" style="--card-accent: #6366f1;">
+        <div class="kpi-header">
+          <span class="kpi-title">Total Students</span>
+          <span class="kpi-icon">🎓</span>
+        </div>
+        <div class="kpi-value" id="kpi-students">5,000</div>
+        <div class="kpi-subtitle">
+          <span class="kpi-badge-sub">100%</span> eligible cohort
+        </div>
+      </div>
+
+      <div class="kpi-card" style="--card-accent: #10b981;">
+        <div class="kpi-header">
+          <span class="kpi-title">Placement Rate</span>
+          <span class="kpi-icon">📈</span>
+        </div>
+        <div class="kpi-value" id="kpi-rate">50.2%</div>
+        <div class="kpi-subtitle">
+          <span class="kpi-badge-sub">2,510</span> placed students
+        </div>
+      </div>
+
+      <div class="kpi-card" style="--card-accent: #06b6d4;">
+        <div class="kpi-header">
+          <span class="kpi-title">Average Package</span>
+          <span class="kpi-icon">💼</span>
+        </div>
+        <div class="kpi-value" id="kpi-avg-ctc">₹27.37 L</div>
+        <div class="kpi-subtitle">Mean offered CTC</div>
+      </div>
+
+      <div class="kpi-card" style="--card-accent: #f59e0b;">
+        <div class="kpi-header">
+          <span class="kpi-title">Highest Package</span>
+          <span class="kpi-icon">🏆</span>
+        </div>
+        <div class="kpi-value" id="kpi-max-ctc">₹49.47 L</div>
+        <div class="kpi-subtitle">Peak CTC offered</div>
+      </div>
+
+      <div class="kpi-card" style="--card-accent: #8b5cf6;">
+        <div class="kpi-header">
+          <span class="kpi-title">Total Offers</span>
+          <span class="kpi-icon">✉️</span>
+        </div>
+        <div class="kpi-value" id="kpi-offers">11,419</div>
+        <div class="kpi-subtitle">From 250 drives</div>
+      </div>
+
+      <div class="kpi-card" style="--card-accent: #ec4899;">
+        <div class="kpi-header">
+          <span class="kpi-title">Conversion Rate</span>
+          <span class="kpi-icon">🎯</span>
+        </div>
+        <div class="kpi-value" id="kpi-conv">31.5%</div>
+        <div class="kpi-subtitle">11,419 / 36,297 apps</div>
+      </div>
+    </section>
+
+    <!-- Row 1: Funnel & CTC Distribution -->
+    <div class="dashboard-row">
+      <div class="chart-card">
+        <div class="chart-header">
+          <div>
+            <div class="chart-title">Recruitment Pipeline Funnel</div>
+            <div class="chart-desc">Student conversion progression across recruitment stages</div>
+          </div>
+        </div>
+        <div class="funnel-container">
+          <div class="funnel-stage">
+            <div class="funnel-stage-bar" style="width: 100%; --stage-color: #6366f1;"></div>
+            <div class="funnel-content">
+              <span class="stage-name"><span class="stage-dot" style="--stage-color: #6366f1;"></span> 1. Applications Submitted</span>
+              <div class="stage-metrics">
+                <span class="stage-count">36,297</span>
+                <span class="stage-pct">100%</span>
+              </div>
+            </div>
+          </div>
+          <div class="funnel-stage">
+            <div class="funnel-stage-bar" style="width: 52.2%; --stage-color: #06b6d4;"></div>
+            <div class="funnel-content">
+              <span class="stage-name"><span class="stage-dot" style="--stage-color: #06b6d4;"></span> 2. Online Assessment Cleared (Score ≥ 70)</span>
+              <div class="stage-metrics">
+                <span class="stage-count">18,939</span>
+                <span class="stage-pct">52.2%</span>
+              </div>
+            </div>
+          </div>
+          <div class="funnel-stage">
+            <div class="funnel-stage-bar" style="width: 31.5%; --stage-color: #8b5cf6;"></div>
+            <div class="funnel-content">
+              <span class="stage-name"><span class="stage-dot" style="--stage-color: #8b5cf6;"></span> 3. Reached Interview Rounds</span>
+              <div class="stage-metrics">
+                <span class="stage-count">11,419</span>
+                <span class="stage-pct">31.5%</span>
+              </div>
+            </div>
+          </div>
+          <div class="funnel-stage">
+            <div class="funnel-stage-bar" style="width: 31.5%; --stage-color: #10b981;"></div>
+            <div class="funnel-content">
+              <span class="stage-name"><span class="stage-dot" style="--stage-color: #10b981;"></span> 4. Final Placement Offers</span>
+              <div class="stage-metrics">
+                <span class="stage-count">11,419</span>
+                <span class="stage-pct">31.5%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <div>
+            <div class="chart-title">CTC Distribution</div>
+            <div class="chart-desc">Compensation packages grouped by CTC tiers</div>
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="ctcChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Branch Analytics & Hiring Types -->
+    <div class="dashboard-row equal">
+      <div class="chart-card">
+        <div class="chart-header">
+          <div>
+            <div class="chart-title">Branch-wise Placement Rate (%)</div>
+            <div class="chart-desc">Percentage of students placed per academic branch</div>
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="branchChart"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <div>
+            <div class="chart-title">Hiring Type Composition</div>
+            <div class="chart-desc">Offers distributed across Full-Time, Internship, and PPO</div>
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="hiringTypeChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Top Recruiting Companies Table & Roles -->
+    <div class="dashboard-row">
+      <div class="chart-card">
+        <div class="chart-header">
+          <div>
+            <div class="chart-title">Top 10 Recruiting Companies</div>
+            <div class="chart-desc">Companies offering the highest number of placement selections</div>
+          </div>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Company Name</th>
+                <th>Industry</th>
+                <th>Total Offers</th>
+                <th>Average Package</th>
+                <th>Max Package</th>
+              </tr>
+            </thead>
+            <tbody id="companies-table-body">
+              <!-- Populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <div>
+            <div class="chart-title">In-Demand Job Roles</div>
+            <div class="chart-desc">Top recruitment roles by offer count</div>
+          </div>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="rolesChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      Developed by <a href="https://github.com/Abhishek-dotcom15" target="_blank">Abhishek Kumar Yadav</a> | Placement Analytics Dashboard
+    </div>
+    <div>
+      Powered by Python, PostgreSQL, DuckDB, & Power BI
+    </div>
+  </footer>
+
+  <!-- Dashboard Interactivity Script -->
+  <script>
+    // Embedded analytical dataset from DuckDB / PostgreSQL
+    const rawData = {
+      branches: [
+        { id: "1", name: "Branch 1 (CSE)", total: 952, placed: 473, rate: 49.7, offers: 2162, avgCtc: 27.45 },
+        { id: "2", name: "Branch 2 (IT)", total: 1000, placed: 474, rate: 47.4, offers: 2160, avgCtc: 27.55 },
+        { id: "3", name: "Branch 3 (EE)", total: 1028, placed: 549, rate: 53.4, offers: 2460, avgCtc: 27.42 },
+        { id: "4", name: "Branch 4 (ECE)", total: 1020, placed: 522, rate: 51.2, offers: 2402, avgCtc: 27.29 },
+        { id: "5", name: "Branch 5 (ME)", total: 1000, placed: 492, rate: 49.2, offers: 2235, avgCtc: 27.13 }
+      ],
+      companies: [
+        { name: "JPMorgan Chase", industry: "Finance", offers: 844, avgCtc: 27.95, maxCtc: 49.47 },
+        { name: "EY", industry: "Consulting", offers: 623, avgCtc: 25.88, maxCtc: 49.47 },
+        { name: "NXP", industry: "Electronics", offers: 558, avgCtc: 27.57, maxCtc: 49.47 },
+        { name: "Bain", industry: "Consulting", offers: 555, avgCtc: 26.75, maxCtc: 49.47 },
+        { name: "Goldman Sachs", industry: "Finance", offers: 541, avgCtc: 28.14, maxCtc: 49.47 },
+        { name: "Apple", industry: "Technology", offers: 539, avgCtc: 27.71, maxCtc: 49.47 },
+        { name: "Microsoft", industry: "Technology", offers: 504, avgCtc: 27.96, maxCtc: 49.43 },
+        { name: "Flipkart", industry: "E-Commerce", offers: 480, avgCtc: 27.18, maxCtc: 49.47 },
+        { name: "McKinsey", industry: "Consulting", offers: 464, avgCtc: 27.05, maxCtc: 49.47 },
+        { name: "Google", industry: "Technology", offers: 457, avgCtc: 27.62, maxCtc: 49.43 }
+      ],
+      roles: [
+        { role: "SDE", count: 1203 },
+        { role: "VLSI Engineer", count: 1063 },
+        { role: "Consultant", count: 1048 },
+        { role: "Cyber Security", count: 984 },
+        { role: "Cloud Engineer", count: 957 },
+        { role: "AI Engineer", count: 939 },
+        { role: "Software Eng", count: 848 }
+      ],
+      ctcTiers: [
+        { tier: "35+ LPA", count: 3213 },
+        { tier: "25 - 35 LPA", count: 2993 },
+        { tier: "15 - 25 LPA", count: 3092 },
+        { tier: "Under 15 LPA", count: 2121 }
+      ],
+      hiringTypes: [
+        { type: "Full-Time", count: 7009 },
+        { type: "Internship", count: 3199 },
+        { type: "PPO", count: 1211 }
+      ]
+    };
+
+    // Render Company Table
+    function renderCompaniesTable() {
+      const tbody = document.getElementById("companies-table-body");
+      tbody.innerHTML = rawData.companies.map(c => `
+        <tr>
+          <td><strong>${c.name}</strong></td>
+          <td><span style="color: var(--text-muted);">${c.industry}</span></td>
+          <td>
+            <div class="progress-pill">
+              <div class="progress-fill" style="width: ${(c.offers / 844) * 100}%;"></div>
+            </div>
+            <strong>${c.offers.toLocaleString()}</strong>
+          </td>
+          <td><span class="ctc-tag">₹${c.avgCtc} L</span></td>
+          <td><span class="ctc-tag" style="color: var(--accent-amber); background: rgba(245, 158, 11, 0.1);">₹${c.maxCtc} L</span></td>
+        </tr>
+      `).join("");
+    }
+
+    // Chart.js Default styling
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
+
+    // CTC Doughnut Chart
+    const ctcCtx = document.getElementById('ctcChart').getContext('2d');
+    const ctcChart = new Chart(ctcCtx, {
+      type: 'doughnut',
+      data: {
+        labels: rawData.ctcTiers.map(t => t.tier),
+        datasets: [{
+          data: rawData.ctcTiers.map(t => t.count),
+          backgroundColor: ['#6366f1', '#06b6d4', '#10b981', '#f59e0b'],
+          borderWidth: 2,
+          borderColor: '#111827'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true } }
+        },
+        cutout: '68%'
+      }
+    });
+
+    // Branch Placement Rate Bar Chart
+    const branchCtx = document.getElementById('branchChart').getContext('2d');
+    const branchChart = new Chart(branchCtx, {
+      type: 'bar',
+      data: {
+        labels: rawData.branches.map(b => b.name),
+        datasets: [{
+          label: 'Placement Rate (%)',
+          data: rawData.branches.map(b => b.rate),
+          backgroundColor: 'rgba(99, 102, 241, 0.75)',
+          borderColor: '#6366f1',
+          borderWidth: 1.5,
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { 
+            beginAtZero: true, 
+            max: 60,
+            grid: { color: 'rgba(255, 255, 255, 0.05)' } 
+          },
+          x: { grid: { display: false } }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+
+    // Hiring Type Polar Chart
+    const hiringCtx = document.getElementById('hiringTypeChart').getContext('2d');
+    const hiringChart = new Chart(hiringCtx, {
+      type: 'pie',
+      data: {
+        labels: rawData.hiringTypes.map(h => h.type),
+        datasets: [{
+          data: rawData.hiringTypes.map(h => h.count),
+          backgroundColor: ['#8b5cf6', '#06b6d4', '#ec4899'],
+          borderWidth: 2,
+          borderColor: '#111827'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true } }
+        }
+      }
+    });
+
+    // Roles Horizontal Bar Chart
+    const rolesCtx = document.getElementById('rolesChart').getContext('2d');
+    const rolesChart = new Chart(rolesCtx, {
+      type: 'bar',
+      data: {
+        labels: rawData.roles.map(r => r.role),
+        datasets: [{
+          axis: 'y',
+          data: rawData.roles.map(r => r.count),
+          backgroundColor: 'rgba(16, 185, 129, 0.7)',
+          borderColor: '#10b981',
+          borderWidth: 1.5,
+          borderRadius: 6
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: { grid: { color: 'rgba(255, 255, 255, 0.05)' } },
+          y: { grid: { display: false } }
+        },
+        plugins: { legend: { display: false } }
+      }
+    });
+
+    // Interactive Branch Filter Function
+    function setBranchFilter(branchId) {
+      document.querySelectorAll('#branch-filters .pill-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      if (branchId === 'all') {
+        document.getElementById('kpi-students').textContent = '5,000';
+        document.getElementById('kpi-rate').textContent = '50.2%';
+        document.getElementById('kpi-offers').textContent = '11,419';
+        document.getElementById('kpi-avg-ctc').textContent = '₹27.37 L';
+        branchChart.data.datasets[0].backgroundColor = 'rgba(99, 102, 241, 0.75)';
+        branchChart.update();
+      } else {
+        const b = rawData.branches.find(x => x.id === branchId);
+        if (b) {
+          document.getElementById('kpi-students').textContent = b.total.toLocaleString();
+          document.getElementById('kpi-rate').textContent = b.rate + '%';
+          document.getElementById('kpi-offers').textContent = b.offers.toLocaleString();
+          document.getElementById('kpi-avg-ctc').textContent = '₹' + b.avgCtc + ' L';
+          
+          branchChart.data.datasets[0].backgroundColor = rawData.branches.map(x => 
+            x.id === branchId ? '#10b981' : 'rgba(255, 255, 255, 0.1)'
+          );
+          branchChart.update();
+        }
+      }
+    }
+
+    // Initialize
+    renderCompaniesTable();
+  </script>
+</body>
+</html>
