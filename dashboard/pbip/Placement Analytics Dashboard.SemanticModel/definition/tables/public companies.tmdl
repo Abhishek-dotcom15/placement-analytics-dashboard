@@ -1,0 +1,72 @@
+table 'public companies'
+	lineageTag: 232d8d46-f76b-449a-8773-b3ae75707fc4
+
+	column company_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f40fbce-c446-4b4c-9506-03d9c063a2a1
+		summarizeBy: none
+		sourceColumn: company_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: b44f43ac-23d2-4e28-9761-fd6bb36a9e2e
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column industry
+		dataType: string
+		lineageTag: f453a9aa-227c-4308-948a-b859a97578da
+		summarizeBy: none
+		sourceColumn: industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_type
+		dataType: string
+		lineageTag: cde19395-a883-452d-bebc-705a3c5bff50
+		summarizeBy: none
+		sourceColumn: company_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column headquarters
+		dataType: string
+		lineageTag: 128ba233-6425-4848-94ba-7610231302de
+		summarizeBy: none
+		sourceColumn: headquarters
+
+		annotation SummarizationSetBy = Automatic
+
+	column website
+		dataType: string
+		lineageTag: 64a18ffe-27fd-4daf-8ae5-8f38e49c415d
+		summarizeBy: none
+		sourceColumn: website
+
+		annotation SummarizationSetBy = Automatic
+
+	column returning_company
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d24ef387-989c-440e-a0f0-56751ae6b2b0
+		summarizeBy: none
+		sourceColumn: returning_company
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public companies' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost:5432", "placement_analytics"),
+				    public_companies = Source{[Schema="public",Item="companies"]}[Data]
+				in
+				    public_companies
+
+	annotation PBI_ResultType = Table
+

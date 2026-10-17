@@ -1,0 +1,92 @@
+table 'public placement_drives'
+	lineageTag: 5bbf5fbb-0771-42ce-94ff-db2d815c6fc4
+
+	column drive_id
+		dataType: int64
+		formatString: 0
+		lineageTag: d760a256-5666-4907-93d4-79fb66362133
+		summarizeBy: none
+		sourceColumn: drive_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fcb52e4-adfb-4f76-a3b1-e5eaad16911f
+		summarizeBy: none
+		sourceColumn: company_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column role
+		dataType: string
+		lineageTag: 4f216934-be07-43dc-928f-9ab08765867a
+		summarizeBy: none
+		sourceColumn: role
+
+		annotation SummarizationSetBy = Automatic
+
+	column hiring_type
+		dataType: string
+		lineageTag: 408e980e-4098-48af-9025-de597ae91809
+		summarizeBy: none
+		sourceColumn: hiring_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column ctc
+		dataType: double
+		lineageTag: 97f6f45c-75d5-47c4-9739-f943983473ae
+		summarizeBy: sum
+		sourceColumn: ctc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column minimum_cgpa
+		dataType: double
+		lineageTag: bbaa4ed4-ed39-4af7-93df-907f16b18be5
+		summarizeBy: sum
+		sourceColumn: minimum_cgpa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column location
+		dataType: string
+		lineageTag: 6182620e-612c-4ed5-b499-941134e02c73
+		summarizeBy: none
+		sourceColumn: location
+
+		annotation SummarizationSetBy = Automatic
+
+	column drive_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 00da88be-7b6b-4a69-963b-8844c0cd417e
+		summarizeBy: none
+		sourceColumn: drive_date
+
+		variation Variation
+			isDefault
+			relationship: 1547fdc3-ba61-4f88-a38c-804beadb892e
+			defaultHierarchy: LocalDateTable_225d973a-7db3-4b4b-8303-dee0f4d50e90.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'public placement_drives' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost:5432", "placement_analytics"),
+				    public_placement_drives = Source{[Schema="public",Item="placement_drives"]}[Data]
+				in
+				    public_placement_drives
+
+	annotation PBI_ResultType = Table
+

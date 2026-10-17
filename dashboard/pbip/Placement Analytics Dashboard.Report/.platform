@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Placement Analytics Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2f79da21-7e28-4127-ac73-ac4629826f02"
+  }
+}

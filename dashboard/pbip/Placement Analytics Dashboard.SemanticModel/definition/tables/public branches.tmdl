@@ -1,0 +1,39 @@
+table 'public branches'
+	lineageTag: 1ee375f7-2006-44e5-bc61-9c59097082fb
+
+	column branch_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d2b8d61-d5a6-4970-a6a2-4f41592c3af0
+		summarizeBy: none
+		sourceColumn: branch_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column branch_name
+		dataType: string
+		lineageTag: 0540ddf3-eb96-4ce0-b994-9fb543875332
+		summarizeBy: none
+		sourceColumn: branch_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column department
+		dataType: string
+		lineageTag: 2f9fb861-4692-420f-95d7-fd84fea013b9
+		summarizeBy: none
+		sourceColumn: department
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public branches' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost:5432", "placement_analytics"),
+				    public_branches = Source{[Schema="public",Item="branches"]}[Data]
+				in
+				    public_branches
+
+	annotation PBI_ResultType = Table
+

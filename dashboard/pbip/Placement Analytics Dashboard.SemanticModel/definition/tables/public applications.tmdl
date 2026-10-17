@@ -1,0 +1,137 @@
+table 'public applications'
+	lineageTag: e0a94100-5512-4536-88ac-02115033f055
+
+	measure 'Total Students' = COUNTROWS('public students')
+		formatString: 0
+		lineageTag: c8a9d2cb-9087-417d-9678-2c0e85fd07d7
+
+	measure 'Total Drives' =
+			
+			COUNTROWS('public placement_drives')
+		formatString: 0
+		lineageTag: 6ac8c08b-2ac0-415b-8bd4-be7820e090b5
+
+	measure 'Total Companies' =
+			
+			COUNTROWS('public companies')
+		formatString: 0
+		lineageTag: ed20e3f9-824c-4978-ad3a-4dac8d859a95
+
+	measure 'Total Applications' =
+			
+			COUNTROWS('public applications')
+		formatString: 0
+		lineageTag: c321631c-250a-424c-a705-89126ecf978b
+
+	measure 'Total Offers' =
+			
+			COUNTROWS('public offers')
+		formatString: 0
+		lineageTag: 86fffefc-4a11-4c8b-a7ba-a3c0f25820ca
+
+	measure 'Highest CTC' =
+			
+			MAX('public offers'[offered_ctc])
+		lineageTag: cba9e4b9-6243-4221-8b3b-721e16acf8ef
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Placement Rate' =
+			
+			DIVIDE(
+			    [Placed Students],
+			    [Total Students],
+			    0
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 29ab316d-07d5-4cc0-9c51-1c33d730cfb2
+
+	measure 'Total Interviews' =
+			
+			COUNTROWS('public interview_rounds')
+		formatString: 0
+		lineageTag: 4a7e187b-50d2-4f08-8ccc-2c621f1d0215
+
+	measure 'Average CTC' =
+			
+			AVERAGE('public offers'[offered_ctc])
+		lineageTag: eed48114-069e-4b65-ad48-0c6024f7fa32
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Placed Students' =
+			
+			DISTINCTCOUNT('public applications'[student_id])
+		formatString: 0
+		lineageTag: b9fb1f33-a2ef-4196-b90c-518388c7ea87
+
+	column application_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c4bf0b9-5a49-490c-a359-d90c299aad54
+		summarizeBy: none
+		sourceColumn: application_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column student_id
+		dataType: string
+		lineageTag: f21987eb-b76f-4e38-81b6-32b4173ed470
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column drive_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d0df7f4-02d0-4ab7-9e66-a92b54d7ce37
+		summarizeBy: none
+		sourceColumn: drive_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column application_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f440ee69-1ca3-48fc-8fd7-bccf2d0cb47a
+		summarizeBy: none
+		sourceColumn: application_date
+
+		variation Variation
+			isDefault
+			relationship: deb5cea7-9d8a-4768-b58b-a423356fa517
+			defaultHierarchy: LocalDateTable_39e74325-8d85-41d7-bd6a-afb9771ad45f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column application_status
+		dataType: string
+		lineageTag: cfc8b008-dacb-4fa2-996d-51c0867c1141
+		summarizeBy: none
+		sourceColumn: application_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column oa_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 7aba2ae6-46df-4c43-8096-e98489d77d83
+		summarizeBy: sum
+		sourceColumn: oa_score
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public applications' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost:5432", "placement_analytics"),
+				    public_applications = Source{[Schema="public",Item="applications"]}[Data]
+				in
+				    public_applications
+
+	annotation PBI_ResultType = Table
+

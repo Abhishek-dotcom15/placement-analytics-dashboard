@@ -1,0 +1,64 @@
+table 'public interview_rounds'
+	lineageTag: 0d066ea6-0c0e-467e-bd37-23fb6d2291d7
+
+	column round_id
+		dataType: int64
+		formatString: 0
+		lineageTag: bc566426-685a-40eb-aa89-ede791c7f482
+		summarizeBy: sum
+		sourceColumn: round_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column application_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 91dd16fc-2214-4083-98ae-ff68e83c30fb
+		summarizeBy: none
+		sourceColumn: application_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column round_name
+		dataType: string
+		lineageTag: 762c3d16-f823-4f29-8918-a81db7941ad7
+		summarizeBy: none
+		sourceColumn: round_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column round_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4b7e28f1-fa1f-45fd-ae45-60147dce187c
+		summarizeBy: none
+		sourceColumn: round_date
+
+		variation Variation
+			isDefault
+			relationship: c978d862-0fc9-4a50-95b4-f0b02bf742e7
+			defaultHierarchy: LocalDateTable_b60db782-20a0-4cbc-a845-89fbcef10e96.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column result
+		dataType: string
+		lineageTag: 505201fc-3a8b-4f37-ac4e-ceb27aeadc71
+		summarizeBy: none
+		sourceColumn: result
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public interview_rounds' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost:5432", "placement_analytics"),
+				    public_interview_rounds = Source{[Schema="public",Item="interview_rounds"]}[Data]
+				in
+				    public_interview_rounds
+
+	annotation PBI_ResultType = Table
+

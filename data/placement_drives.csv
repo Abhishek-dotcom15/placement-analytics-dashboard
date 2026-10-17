@@ -1,0 +1,251 @@
+drive_id,company_id,role,hiring_type,ctc,minimum_cgpa,location,drive_date
+101,150,Embedded Engineer,Full-Time,47.33,8.3,Gurgaon,2026-09-27
+102,131,Cloud Engineer,Internship,11.24,6.66,Hyderabad,2026-08-18
+103,51,Data Scientist,PPO,37.25,8.91,Gurgaon,2026-10-18
+104,89,Data Scientist,Internship,25.38,7.89,Pune,2026-09-27
+105,133,Cloud Engineer,Full-Time,8.7,7.45,Bangalore,2026-09-26
+106,101,Product Engineer,Full-Time,45.06,8.74,Chennai,2026-09-17
+107,71,Data Analyst,Full-Time,35.45,8.91,Gurgaon,2026-09-20
+108,78,Product Engineer,Full-Time,16.33,6.88,Chennai,2026-10-28
+109,2,Cyber Security Analyst,PPO,26.25,7.78,Mumbai,2026-08-24
+110,99,Consultant,Internship,35.23,8.81,Mumbai,2026-09-04
+111,17,DevOps Engineer,Internship,44.07,8.67,Mumbai,2026-08-03
+112,79,AI Engineer,Internship,27.01,7.87,Noida,2026-09-22
+113,92,SDE,Full-Time,16.37,7.09,Noida,2026-10-19
+114,141,VLSI Engineer,Full-Time,43.16,8.59,Noida,2026-10-23
+115,48,AI Engineer,Internship,28.87,7.82,Bangalore,2026-08-19
+116,113,Cyber Security Analyst,Full-Time,19.16,7.19,Hyderabad,2026-08-10
+117,35,SDE,Internship,43.57,8.3,Mumbai,2026-08-16
+118,60,VLSI Engineer,Full-Time,32.06,7.96,Bangalore,2026-10-09
+119,149,SDE,Full-Time,33.43,7.79,Gurgaon,2026-10-22
+120,107,AI Engineer,Full-Time,18.84,6.86,Chennai,2026-10-09
+121,148,DevOps Engineer,Full-Time,38.55,8.57,Noida,2026-10-12
+122,45,AI Engineer,Full-Time,14.92,6.84,Bangalore,2026-10-13
+123,147,AI Engineer,Full-Time,25.09,8.01,Noida,2026-09-24
+124,48,SDE,Internship,39.74,8.33,Mumbai,2026-09-07
+125,33,SDE,Full-Time,33.22,7.54,Hyderabad,2026-10-26
+126,126,VLSI Engineer,Full-Time,48.76,8.28,Chennai,2026-09-06
+127,34,VLSI Engineer,Full-Time,33.2,8.18,Chennai,2026-10-07
+128,86,Software Engineer,Full-Time,19.48,7.36,Noida,2026-08-16
+129,67,ML Engineer,Full-Time,45.74,8.51,Chennai,2026-09-01
+130,93,Cyber Security Analyst,Internship,48.08,8.26,Pune,2026-09-21
+131,37,Product Engineer,Full-Time,9.6,7.46,Gurgaon,2026-08-25
+132,33,Business Analyst,PPO,28.54,8.15,Gurgaon,2026-10-01
+133,40,Cloud Engineer,Full-Time,29.04,8.15,Gurgaon,2026-09-17
+134,53,Consultant,Full-Time,18.16,7.34,Hyderabad,2026-10-03
+135,137,Consultant,Internship,16.6,6.85,Noida,2026-08-04
+136,55,DevOps Engineer,PPO,32.02,8.02,Pune,2026-09-22
+137,68,Consultant,Full-Time,41.16,8.43,Mumbai,2026-10-28
+138,31,Consultant,Internship,26.68,7.81,Chennai,2026-09-27
+139,78,Data Analyst,Full-Time,25.38,8.18,Pune,2026-09-14
+140,121,Data Analyst,Full-Time,33.5,8.13,Mumbai,2026-10-17
+141,94,AI Engineer,Full-Time,32.28,7.74,Gurgaon,2026-09-22
+142,89,Software Engineer,PPO,19.65,6.52,Gurgaon,2026-10-26
+143,79,ML Engineer,PPO,43.04,8.69,Gurgaon,2026-08-08
+144,93,Cyber Security Analyst,Full-Time,26.6,8.29,Bangalore,2026-08-23
+145,140,SDE,Internship,15.09,6.63,Hyderabad,2026-09-15
+146,39,Data Scientist,Full-Time,31.28,7.92,Bangalore,2026-09-10
+147,117,Data Scientist,PPO,20.75,8.01,Mumbai,2026-09-10
+148,13,Cloud Engineer,Full-Time,48.27,8.22,Mumbai,2026-08-02
+149,126,Cyber Security Analyst,Full-Time,34.88,7.66,Pune,2026-10-15
+150,63,Consultant,Full-Time,26.81,8.28,Hyderabad,2026-08-01
+151,150,ML Engineer,Full-Time,12.18,7.14,Gurgaon,2026-10-06
+152,135,Software Engineer,PPO,12.83,7.1,Chennai,2026-10-08
+153,112,AI Engineer,Full-Time,21.29,7.7,Noida,2026-09-11
+154,130,SDE,Internship,12.49,7.49,Chennai,2026-08-15
+155,53,AI Engineer,Internship,23.87,8.07,Mumbai,2026-10-01
+156,107,Consultant,Full-Time,27.38,7.99,Hyderabad,2026-08-19
+157,20,VLSI Engineer,Full-Time,13.66,7.41,Mumbai,2026-08-10
+158,36,Cloud Engineer,Full-Time,9.03,6.9,Bangalore,2026-10-19
+159,136,Cyber Security Analyst,Full-Time,12.13,6.66,Gurgaon,2026-08-14
+160,146,VLSI Engineer,Full-Time,39.55,8.49,Gurgaon,2026-08-06
+161,5,ML Engineer,Internship,19.34,6.88,Hyderabad,2026-10-26
+162,88,ML Engineer,PPO,35.32,8.6,Bangalore,2026-08-09
+163,66,Business Analyst,Internship,42.92,8.67,Mumbai,2026-09-12
+164,30,DevOps Engineer,Full-Time,42.2,8.52,Noida,2026-10-03
+165,103,Business Analyst,Internship,38.55,8.33,Hyderabad,2026-09-17
+166,115,VLSI Engineer,Full-Time,31.06,7.83,Noida,2026-08-15
+167,132,AI Engineer,Internship,39.78,8.7,Chennai,2026-09-03
+168,107,Cyber Security Analyst,PPO,39.36,8.96,Gurgaon,2026-10-19
+169,28,Software Engineer,PPO,22.13,7.76,Noida,2026-09-10
+170,142,Embedded Engineer,Internship,8.48,6.61,Gurgaon,2026-10-23
+171,15,Cloud Engineer,Internship,11.66,7.16,Pune,2026-09-03
+172,67,Data Scientist,Full-Time,39.45,9.0,Noida,2026-09-18
+173,31,AI Engineer,Full-Time,49.43,8.4,Chennai,2026-08-09
+174,22,AI Engineer,Full-Time,20.6,8.04,Bangalore,2026-10-22
+175,145,Embedded Engineer,Internship,10.38,7.25,Mumbai,2026-08-22
+176,106,Data Analyst,PPO,31.85,7.62,Bangalore,2026-08-02
+177,42,DevOps Engineer,Full-Time,37.07,8.64,Gurgaon,2026-09-03
+178,21,Business Analyst,Full-Time,19.93,7.03,Chennai,2026-08-16
+179,9,Cloud Engineer,Full-Time,16.07,6.7,Bangalore,2026-09-04
+180,43,Cloud Engineer,Full-Time,46.61,8.42,Bangalore,2026-10-17
+181,96,Cloud Engineer,Internship,24.5,7.52,Noida,2026-08-21
+182,64,Business Analyst,Full-Time,11.92,7.17,Pune,2026-08-20
+183,59,SDE,Full-Time,11.31,7.15,Mumbai,2026-08-25
+184,20,Data Analyst,Full-Time,11.3,7.23,Noida,2026-10-15
+185,143,AI Engineer,Full-Time,26.49,7.76,Pune,2026-10-16
+186,50,Data Scientist,Internship,23.82,8.18,Hyderabad,2026-08-07
+187,107,VLSI Engineer,Full-Time,19.9,7.21,Mumbai,2026-08-24
+188,138,VLSI Engineer,Full-Time,42.78,8.32,Chennai,2026-08-07
+189,130,Data Analyst,PPO,20.59,7.82,Noida,2026-09-04
+190,32,Consultant,Full-Time,14.91,7.08,Noida,2026-10-14
+191,25,Embedded Engineer,Full-Time,44.15,8.65,Mumbai,2026-09-02
+192,9,SDE,Internship,35.6,8.99,Bangalore,2026-09-07
+193,53,Cloud Engineer,Internship,17.65,6.77,Hyderabad,2026-08-02
+194,85,Consultant,PPO,48.16,8.9,Gurgaon,2026-09-14
+195,120,Data Scientist,Full-Time,11.72,7.16,Gurgaon,2026-09-20
+196,144,Data Scientist,Full-Time,11.1,7.5,Mumbai,2026-08-07
+197,125,Consultant,PPO,35.96,9.0,Bangalore,2026-09-03
+198,56,Business Analyst,Full-Time,32.32,7.72,Noida,2026-08-26
+199,126,Consultant,Full-Time,28.46,7.67,Bangalore,2026-10-27
+200,102,DevOps Engineer,Full-Time,41.86,8.45,Gurgaon,2026-09-06
+201,142,Product Engineer,Internship,38.09,8.44,Pune,2026-09-09
+202,66,ML Engineer,Full-Time,44.89,8.52,Pune,2026-09-28
+203,48,Data Scientist,Full-Time,42.34,8.5,Bangalore,2026-09-09
+204,84,VLSI Engineer,PPO,31.39,7.74,Mumbai,2026-10-16
+205,6,AI Engineer,Full-Time,44.24,8.29,Hyderabad,2026-09-18
+206,79,ML Engineer,Internship,37.39,8.94,Bangalore,2026-08-02
+207,132,Data Scientist,PPO,13.0,7.03,Chennai,2026-09-03
+208,81,DevOps Engineer,Internship,31.61,7.61,Pune,2026-09-24
+209,47,AI Engineer,Full-Time,37.13,8.85,Bangalore,2026-09-08
+210,5,Data Analyst,Full-Time,46.78,8.79,Chennai,2026-08-11
+211,12,Data Scientist,Full-Time,48.49,8.58,Noida,2026-09-10
+212,16,Cyber Security Analyst,Internship,30.26,8.06,Chennai,2026-08-14
+213,139,AI Engineer,Full-Time,19.52,7.39,Bangalore,2026-09-11
+214,62,Data Scientist,Full-Time,36.3,8.63,Pune,2026-09-06
+215,107,DevOps Engineer,Full-Time,37.13,8.47,Chennai,2026-08-16
+216,91,Data Analyst,Full-Time,8.37,7.33,Pune,2026-09-09
+217,83,VLSI Engineer,Full-Time,44.03,8.28,Chennai,2026-09-19
+218,103,Consultant,Internship,26.45,7.62,Noida,2026-08-16
+219,125,AI Engineer,Internship,32.9,8.12,Noida,2026-10-27
+220,76,Software Engineer,Full-Time,36.88,8.6,Hyderabad,2026-08-24
+221,114,Consultant,Full-Time,22.63,7.73,Mumbai,2026-09-11
+222,68,VLSI Engineer,Full-Time,32.74,7.6,Mumbai,2026-10-27
+223,118,SDE,PPO,37.27,8.77,Chennai,2026-08-08
+224,122,Data Analyst,Full-Time,24.11,8.22,Chennai,2026-10-19
+225,108,SDE,Full-Time,31.08,7.56,Bangalore,2026-09-04
+226,53,Consultant,Internship,39.99,8.59,Bangalore,2026-09-22
+227,67,Product Engineer,Internship,9.8,6.86,Chennai,2026-10-23
+228,137,Data Analyst,Internship,42.05,8.74,Gurgaon,2026-09-26
+229,8,AI Engineer,Full-Time,49.35,8.37,Chennai,2026-08-16
+230,1,Cloud Engineer,Full-Time,13.69,7.18,Gurgaon,2026-08-19
+231,119,Software Engineer,Full-Time,42.19,8.48,Gurgaon,2026-10-01
+232,3,VLSI Engineer,Full-Time,29.12,8.3,Bangalore,2026-08-19
+233,146,Cyber Security Analyst,Full-Time,32.51,7.57,Noida,2026-09-13
+234,108,Consultant,Internship,20.74,7.74,Noida,2026-10-11
+235,107,Embedded Engineer,Full-Time,43.62,8.98,Bangalore,2026-08-08
+236,47,VLSI Engineer,PPO,29.68,8.24,Gurgaon,2026-10-05
+237,86,Cyber Security Analyst,PPO,15.3,7.47,Hyderabad,2026-09-18
+238,71,Consultant,Full-Time,20.27,7.64,Hyderabad,2026-10-05
+239,15,Product Engineer,Full-Time,43.73,8.26,Bangalore,2026-08-23
+240,97,VLSI Engineer,Full-Time,15.73,6.73,Gurgaon,2026-09-03
+241,119,Consultant,Full-Time,42.9,8.38,Gurgaon,2026-08-22
+242,105,SDE,Full-Time,18.72,6.93,Bangalore,2026-10-19
+243,89,VLSI Engineer,Full-Time,49.47,8.9,Gurgaon,2026-09-13
+244,5,Data Scientist,Full-Time,36.19,8.97,Hyderabad,2026-10-05
+245,149,DevOps Engineer,Full-Time,9.35,6.52,Mumbai,2026-08-07
+246,87,DevOps Engineer,Internship,18.72,7.44,Pune,2026-09-27
+247,39,Data Analyst,Full-Time,18.52,6.86,Noida,2026-09-12
+248,121,VLSI Engineer,Full-Time,37.82,8.46,Noida,2026-08-16
+249,108,Cloud Engineer,PPO,25.9,8.23,Gurgaon,2026-09-01
+250,67,Consultant,Full-Time,48.97,8.76,Mumbai,2026-08-22
+251,104,Business Analyst,Full-Time,42.05,8.73,Mumbai,2026-10-06
+252,105,Cloud Engineer,Full-Time,15.84,7.37,Gurgaon,2026-08-16
+253,68,SDE,Internship,9.55,6.79,Chennai,2026-08-21
+254,14,Product Engineer,Internship,26.65,7.54,Hyderabad,2026-08-09
+255,64,Embedded Engineer,Full-Time,24.51,8.15,Gurgaon,2026-10-03
+256,112,Embedded Engineer,Internship,24.66,8.1,Pune,2026-08-26
+257,106,Embedded Engineer,Full-Time,21.12,7.63,Noida,2026-08-04
+258,143,SDE,Full-Time,24.16,8.08,Gurgaon,2026-08-16
+259,115,Software Engineer,Internship,18.79,6.98,Bangalore,2026-09-24
+260,78,Business Analyst,Full-Time,12.91,6.96,Bangalore,2026-08-02
+261,87,VLSI Engineer,PPO,39.29,8.26,Gurgaon,2026-08-27
+262,44,SDE,Full-Time,19.92,6.55,Chennai,2026-09-02
+263,102,SDE,Internship,8.07,6.89,Hyderabad,2026-08-13
+264,130,Data Analyst,Full-Time,38.94,8.9,Mumbai,2026-08-21
+265,145,SDE,Full-Time,14.37,7.46,Mumbai,2026-10-08
+266,21,ML Engineer,Full-Time,48.93,8.66,Hyderabad,2026-10-26
+267,101,Embedded Engineer,Full-Time,38.79,8.24,Pune,2026-08-21
+268,78,ML Engineer,Full-Time,44.98,8.63,Gurgaon,2026-10-06
+269,62,Software Engineer,Internship,17.36,7.08,Mumbai,2026-08-22
+270,112,Consultant,Full-Time,43.77,8.85,Bangalore,2026-10-23
+271,124,Embedded Engineer,Full-Time,9.46,7.06,Gurgaon,2026-09-12
+272,43,Embedded Engineer,Full-Time,12.06,6.98,Mumbai,2026-09-18
+273,50,Cyber Security Analyst,Internship,25.79,7.63,Pune,2026-10-12
+274,22,Cyber Security Analyst,Full-Time,11.61,6.93,Bangalore,2026-09-27
+275,129,Product Engineer,Internship,17.84,6.98,Noida,2026-09-20
+276,109,Consultant,PPO,37.35,8.84,Hyderabad,2026-10-24
+277,56,Data Scientist,Internship,17.93,6.56,Mumbai,2026-08-25
+278,111,Product Engineer,Full-Time,9.87,7.18,Bangalore,2026-09-20
+279,139,Software Engineer,Full-Time,25.76,7.62,Gurgaon,2026-10-25
+280,53,Product Engineer,Full-Time,17.7,7.08,Mumbai,2026-08-06
+281,46,Data Analyst,Internship,42.06,8.56,Mumbai,2026-10-27
+282,147,ML Engineer,Internship,9.74,6.98,Chennai,2026-08-27
+283,23,Consultant,Full-Time,34.03,8.25,Mumbai,2026-10-12
+284,79,Data Analyst,PPO,48.33,8.89,Mumbai,2026-09-10
+285,53,Embedded Engineer,Full-Time,30.78,7.74,Hyderabad,2026-09-27
+286,24,Software Engineer,Full-Time,22.87,8.17,Mumbai,2026-09-04
+287,147,Cloud Engineer,Internship,22.98,7.55,Gurgaon,2026-09-27
+288,51,Data Analyst,Full-Time,12.03,6.85,Pune,2026-10-05
+289,128,VLSI Engineer,Full-Time,18.26,6.83,Bangalore,2026-10-01
+290,93,Consultant,Internship,45.05,8.74,Noida,2026-09-14
+291,111,Product Engineer,PPO,17.07,7.33,Mumbai,2026-08-25
+292,105,AI Engineer,Full-Time,28.3,7.9,Pune,2026-10-01
+293,9,VLSI Engineer,Internship,43.17,8.56,Hyderabad,2026-08-06
+294,119,Product Engineer,Full-Time,46.97,8.51,Mumbai,2026-09-05
+295,46,Embedded Engineer,Full-Time,34.81,8.22,Pune,2026-08-27
+296,73,VLSI Engineer,Full-Time,48.75,8.97,Pune,2026-09-13
+297,143,Cloud Engineer,Full-Time,26.17,7.79,Gurgaon,2026-08-16
+298,24,Data Scientist,Full-Time,32.32,7.54,Pune,2026-10-02
+299,57,Cyber Security Analyst,Internship,17.93,7.17,Pune,2026-09-08
+300,138,Data Analyst,Internship,31.0,7.68,Mumbai,2026-10-28
+301,37,Cloud Engineer,Full-Time,45.78,8.63,Pune,2026-10-07
+302,56,Software Engineer,Internship,29.62,7.94,Hyderabad,2026-08-11
+303,95,Consultant,Full-Time,29.32,7.64,Bangalore,2026-09-21
+304,103,AI Engineer,Internship,15.48,7.45,Bangalore,2026-08-17
+305,111,Cloud Engineer,Full-Time,48.6,8.7,Hyderabad,2026-08-10
+306,65,Cloud Engineer,Full-Time,41.47,8.87,Chennai,2026-09-08
+307,149,Software Engineer,Full-Time,11.64,6.98,Pune,2026-09-15
+308,25,SDE,Full-Time,44.86,8.93,Bangalore,2026-09-03
+309,92,AI Engineer,Internship,19.93,6.65,Bangalore,2026-08-11
+310,9,Cyber Security Analyst,Full-Time,9.15,6.51,Chennai,2026-10-18
+311,87,Data Scientist,PPO,8.8,7.36,Gurgaon,2026-08-10
+312,77,Cyber Security Analyst,Full-Time,48.76,8.45,Noida,2026-09-12
+313,11,VLSI Engineer,Full-Time,32.02,7.88,Mumbai,2026-08-02
+314,8,Consultant,Full-Time,36.54,8.22,Noida,2026-10-06
+315,51,Product Engineer,Internship,12.13,7.02,Hyderabad,2026-08-10
+316,75,Cyber Security Analyst,Full-Time,22.71,7.95,Gurgaon,2026-08-24
+317,147,Business Analyst,Full-Time,23.71,7.73,Chennai,2026-08-26
+318,44,DevOps Engineer,Full-Time,31.34,7.65,Mumbai,2026-09-02
+319,125,Business Analyst,PPO,35.82,8.78,Noida,2026-08-09
+320,53,ML Engineer,Full-Time,48.83,8.29,Chennai,2026-08-08
+321,136,Business Analyst,Full-Time,18.87,6.98,Pune,2026-08-03
+322,92,Consultant,Full-Time,22.32,7.56,Noida,2026-08-01
+323,95,DevOps Engineer,Full-Time,48.24,8.33,Mumbai,2026-08-26
+324,89,Consultant,Full-Time,31.7,8.03,Pune,2026-09-03
+325,83,VLSI Engineer,Internship,34.23,7.69,Mumbai,2026-10-01
+326,94,DevOps Engineer,Full-Time,47.89,8.33,Mumbai,2026-09-15
+327,6,SDE,Full-Time,20.99,8.28,Noida,2026-08-12
+328,83,SDE,Full-Time,41.95,8.24,Noida,2026-08-08
+329,77,AI Engineer,Internship,40.51,8.87,Chennai,2026-10-18
+330,96,SDE,Internship,19.97,7.11,Gurgaon,2026-10-02
+331,123,Consultant,Full-Time,19.94,6.93,Hyderabad,2026-09-03
+332,146,Software Engineer,Full-Time,17.29,7.39,Hyderabad,2026-09-02
+333,95,Cyber Security Analyst,Full-Time,34.02,7.7,Pune,2026-09-22
+334,53,Software Engineer,PPO,37.52,8.96,Bangalore,2026-10-21
+335,113,Consultant,PPO,33.18,7.85,Pune,2026-08-08
+336,102,Product Engineer,Full-Time,49.35,8.59,Mumbai,2026-08-28
+337,130,AI Engineer,PPO,47.48,8.25,Pune,2026-08-20
+338,132,Data Analyst,Full-Time,30.7,7.51,Noida,2026-10-03
+339,66,Data Analyst,Internship,45.3,8.84,Pune,2026-08-08
+340,47,Cloud Engineer,Full-Time,20.06,7.75,Hyderabad,2026-09-13
+341,1,ML Engineer,Full-Time,21.1,8.02,Pune,2026-09-08
+342,23,Cyber Security Analyst,Internship,44.65,8.7,Chennai,2026-09-25
+343,130,ML Engineer,Full-Time,11.83,6.62,Gurgaon,2026-09-01
+344,23,VLSI Engineer,Full-Time,12.78,6.66,Mumbai,2026-08-17
+345,32,VLSI Engineer,PPO,30.34,7.51,Pune,2026-08-22
+346,47,Software Engineer,Full-Time,9.49,6.86,Hyderabad,2026-08-24
+347,104,Consultant,Full-Time,47.87,8.28,Noida,2026-09-26
+348,66,Product Engineer,PPO,30.52,8.08,Noida,2026-08-01
+349,41,ML Engineer,Full-Time,30.56,8.05,Hyderabad,2026-08-06
+350,36,Consultant,Full-Time,33.21,7.97,Noida,2026-10-02

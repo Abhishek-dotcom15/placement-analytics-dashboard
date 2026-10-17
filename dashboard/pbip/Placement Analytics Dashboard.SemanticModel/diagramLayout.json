@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 48.456434217663286,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 568.6480367476629,
+            "y": 166.86922833617871
+          },
+          "nodeIndex": "public applications",
+          "nodeLineageTag": "e0a94100-5512-4536-88ac-02115033f055",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1420.8230825978112,
+            "y": 240.53377474239846
+          },
+          "nodeIndex": "public branches",
+          "nodeLineageTag": "1ee375f7-2006-44e5-bc61-9c59097082fb",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 284.19110494339577,
+            "y": 112.08158864144025
+          },
+          "nodeIndex": "public companies",
+          "nodeLineageTag": "232d8d46-f76b-449a-8773-b3ae75707fc4",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 734.70426935217358,
+            "y": 443.66895552708627
+          },
+          "nodeIndex": "public interview_rounds",
+          "nodeLineageTag": "0d066ea6-0c0e-467e-bd37-23fb6d2291d7",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 852.82308259781132,
+            "y": -50
+          },
+          "nodeIndex": "public offers",
+          "nodeLineageTag": "433b7563-4bed-4717-9f13-5d3f5d05332c",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 411.06754948479693
+          },
+          "nodeIndex": "public placement_drives",
+          "nodeLineageTag": "5bbf5fbb-0771-42ce-94ff-db2d815c6fc4",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1136.8230825978112,
+            "y": 166.53377474239846
+          },
+          "nodeIndex": "public students",
+          "nodeLineageTag": "b30c93be-d668-47be-b085-35c4c5df0d5e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 63.2870877232341,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

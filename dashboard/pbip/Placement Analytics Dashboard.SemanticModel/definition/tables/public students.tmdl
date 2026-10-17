@@ -1,0 +1,128 @@
+table 'public students'
+	lineageTag: b30c93be-d668-47be-b085-35c4c5df0d5e
+
+	column student_id
+		dataType: string
+		lineageTag: 6d55e176-fc63-4104-b27a-59feaeea67aa
+		summarizeBy: none
+		sourceColumn: student_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column branch_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ff607e3-08f5-47f9-ae53-5d4eab0fdefb
+		summarizeBy: none
+		sourceColumn: branch_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column cgpa
+		dataType: double
+		lineageTag: f2d2bbda-6931-4163-8169-b4c7b689a894
+		summarizeBy: sum
+		sourceColumn: cgpa
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column active_backlogs
+		dataType: int64
+		formatString: 0
+		lineageTag: 89562cdd-6920-4864-b0f6-08cf93811145
+		summarizeBy: sum
+		sourceColumn: active_backlogs
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_internship
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c7acdd62-cbf2-4d6a-8552-5b68d9bc6f03
+		summarizeBy: none
+		sourceColumn: has_internship
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 375a49e9-ac12-4c1f-9cab-96453a79b221
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_degree
+		dataType: string
+		lineageTag: c1bbf802-935b-44df-a86e-3c233f562d8f
+		summarizeBy: none
+		sourceColumn: current_degree
+
+		annotation SummarizationSetBy = Automatic
+
+	column internship_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b5637f6-5055-4dad-9574-653547da1f52
+		summarizeBy: sum
+		sourceColumn: internship_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column resume_score
+		dataType: int64
+		formatString: 0
+		lineageTag: c3d230f4-6282-4eb4-a369-99bb314a371f
+		summarizeBy: sum
+		sourceColumn: resume_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column coding_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 810e22d2-4d31-4e55-a113-e84a4c3c5fb0
+		summarizeBy: sum
+		sourceColumn: coding_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column communication_score
+		dataType: int64
+		formatString: 0
+		lineageTag: ea715d7d-5cc4-4ba2-86ee-00ffa8fdf2cd
+		summarizeBy: sum
+		sourceColumn: communication_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column placement_status
+		dataType: string
+		lineageTag: d0f4327a-f68f-4333-8f61-058e434fa2c7
+		summarizeBy: none
+		sourceColumn: placement_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column graduation_year
+		dataType: int64
+		formatString: 0
+		lineageTag: a47e7dd0-aa13-4841-b18c-e4f6e0e5d354
+		summarizeBy: sum
+		sourceColumn: graduation_year
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public students' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost:5432", "placement_analytics"),
+				    public_students = Source{[Schema="public",Item="students"]}[Data]
+				in
+				    public_students
+
+	annotation PBI_ResultType = Table
+

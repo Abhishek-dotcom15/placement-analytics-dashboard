@@ -1,0 +1,151 @@
+company_id,company_name,industry,company_type,headquarters,website,returning_company
+1,Bain,Consulting,Service,Boston,https://bain.com,True
+2,Amazon,Technology,Product,Seattle,https://amazon.com,False
+3,JPMorgan Chase,Finance,Service,New York,https://jpmorgan.com,False
+4,Oracle,Technology,Product,Texas,https://oracle.com,True
+5,Goldman Sachs,Finance,Service,New York,https://goldmansachs.com,False
+6,Oracle,Technology,Product,Texas,https://oracle.com,True
+7,HCL,IT Services,Service,Noida,https://hcltech.com,True
+8,Flipkart,E-Commerce,Product,Bangalore,https://flipkart.com,False
+9,JPMorgan Chase,Finance,Service,New York,https://jpmorgan.com,False
+10,Zepto,E-Commerce,Product,Mumbai,https://zepto.com,True
+11,Wipro,IT Services,Service,Bangalore,https://wipro.com,False
+12,Qualcomm,Electronics,Product,California,https://qualcomm.com,False
+13,Intel,Technology,Product,California,https://intel.com,False
+14,Flipkart,E-Commerce,Product,Bangalore,https://flipkart.com,True
+15,Accenture,Consulting,Service,Dublin,https://accenture.com,True
+16,Infosys,IT Services,Service,Bangalore,https://infosys.com,False
+17,Microsoft,Technology,Product,Washington,https://microsoft.com,True
+18,BCG,Consulting,Service,Boston,https://bcg.com,False
+19,Swiggy,E-Commerce,Product,Bangalore,https://swiggy.com,True
+20,KPMG,Consulting,Service,London,https://kpmg.com,True
+21,Morgan Stanley,Finance,Service,New York,https://morganstanley.com,False
+22,Amazon,Technology,Product,Seattle,https://amazon.com,True
+23,EY,Consulting,Service,London,https://ey.com,True
+24,Flipkart,E-Commerce,Product,Bangalore,https://flipkart.com,False
+25,Texas Instruments,Electronics,Product,Texas,https://ti.com,True
+26,Wipro,IT Services,Service,Bangalore,https://wipro.com,True
+27,Swiggy,E-Commerce,Product,Bangalore,https://swiggy.com,False
+28,Bain,Consulting,Service,Boston,https://bain.com,False
+29,Intel,Technology,Product,California,https://intel.com,False
+30,JPMorgan Chase,Finance,Service,New York,https://jpmorgan.com,False
+31,Bain,Consulting,Service,Boston,https://bain.com,False
+32,HCL,IT Services,Service,Noida,https://hcltech.com,False
+33,Meesho,E-Commerce,Product,Bangalore,https://meesho.com,True
+34,Tech Mahindra,IT Services,Service,Pune,https://techmahindra.com,False
+35,Intel,Technology,Product,California,https://intel.com,True
+36,Zepto,E-Commerce,Product,Mumbai,https://zepto.com,False
+37,TCS,IT Services,Service,Mumbai,https://tcs.com,True
+38,Deloitte,Consulting,Service,London,https://deloitte.com,True
+39,Apple,Technology,Product,California,https://apple.com,False
+40,TCS,IT Services,Service,Mumbai,https://tcs.com,True
+41,Accenture,Consulting,Service,Dublin,https://accenture.com,True
+42,Apple,Technology,Product,California,https://apple.com,False
+43,Morgan Stanley,Finance,Service,New York,https://morganstanley.com,True
+44,Apple,Technology,Product,California,https://apple.com,True
+45,McKinsey,Consulting,Service,New York,https://mckinsey.com,False
+46,Wipro,IT Services,Service,Bangalore,https://wipro.com,True
+47,Adobe,Technology,Product,California,https://adobe.com,False
+48,Wipro,IT Services,Service,Bangalore,https://wipro.com,False
+49,Salesforce,Technology,Product,California,https://salesforce.com,True
+50,Salesforce,Technology,Product,California,https://salesforce.com,False
+51,Flipkart,E-Commerce,Product,Bangalore,https://flipkart.com,False
+52,Goldman Sachs,Finance,Service,New York,https://goldmansachs.com,False
+53,Bain,Consulting,Service,Boston,https://bain.com,True
+54,American Express,Finance,Service,New York,https://americanexpress.com,True
+55,Accenture,Consulting,Service,Dublin,https://accenture.com,False
+56,JPMorgan Chase,Finance,Service,New York,https://jpmorgan.com,True
+57,Oracle,Technology,Product,Texas,https://oracle.com,True
+58,Meta,Technology,Product,California,https://meta.com,False
+59,ZS Associates,Consulting,Service,Illinois,https://zs.com,False
+60,JPMorgan Chase,Finance,Service,New York,https://jpmorgan.com,True
+61,Salesforce,Technology,Product,California,https://salesforce.com,True
+62,BCG,Consulting,Service,Boston,https://bcg.com,False
+63,KPMG,Consulting,Service,London,https://kpmg.com,True
+64,Microsoft,Technology,Product,Washington,https://microsoft.com,True
+65,PwC,Consulting,Service,London,https://pwc.com,False
+66,Tech Mahindra,IT Services,Service,Pune,https://techmahindra.com,True
+67,Qualcomm,Electronics,Product,California,https://qualcomm.com,False
+68,Oracle,Technology,Product,Texas,https://oracle.com,True
+69,Qualcomm,Electronics,Product,California,https://qualcomm.com,False
+70,ZS Associates,Consulting,Service,Illinois,https://zs.com,True
+71,NVIDIA,Technology,Product,California,https://nvidia.com,True
+72,Apple,Technology,Product,California,https://apple.com,False
+73,Meta,Technology,Product,California,https://meta.com,False
+74,Salesforce,Technology,Product,California,https://salesforce.com,True
+75,Google,Technology,Product,California,https://google.com,True
+76,Meta,Technology,Product,California,https://meta.com,True
+77,Qualcomm,Electronics,Product,California,https://qualcomm.com,False
+78,MediaTek,Electronics,Product,Taiwan,https://mediatek.com,True
+79,HCL,IT Services,Service,Noida,https://hcltech.com,False
+80,Swiggy,E-Commerce,Product,Bangalore,https://swiggy.com,True
+81,Salesforce,Technology,Product,California,https://salesforce.com,True
+82,EY,Consulting,Service,London,https://ey.com,True
+83,EY,Consulting,Service,London,https://ey.com,False
+84,JPMorgan Chase,Finance,Service,New York,https://jpmorgan.com,True
+85,Samsung,Electronics,Product,Seoul,https://samsung.com,False
+86,Google,Technology,Product,California,https://google.com,False
+87,Zomato,E-Commerce,Product,Gurgaon,https://zomato.com,True
+88,American Express,Finance,Service,New York,https://americanexpress.com,True
+89,NXP,Electronics,Product,Netherlands,https://nxp.com,False
+90,Meesho,E-Commerce,Product,Bangalore,https://meesho.com,True
+91,BCG,Consulting,Service,Boston,https://bcg.com,False
+92,Goldman Sachs,Finance,Service,New York,https://goldmansachs.com,True
+93,TCS,IT Services,Service,Mumbai,https://tcs.com,False
+94,EY,Consulting,Service,London,https://ey.com,True
+95,NVIDIA,Technology,Product,California,https://nvidia.com,True
+96,Tech Mahindra,IT Services,Service,Pune,https://techmahindra.com,False
+97,HCL,IT Services,Service,Noida,https://hcltech.com,False
+98,BCG,Consulting,Service,Boston,https://bcg.com,False
+99,Tech Mahindra,IT Services,Service,Pune,https://techmahindra.com,False
+100,MediaTek,Electronics,Product,Taiwan,https://mediatek.com,False
+101,HCL,IT Services,Service,Noida,https://hcltech.com,True
+102,Microsoft,Technology,Product,Washington,https://microsoft.com,False
+103,Morgan Stanley,Finance,Service,New York,https://morganstanley.com,False
+104,Accenture,Consulting,Service,Dublin,https://accenture.com,True
+105,Goldman Sachs,Finance,Service,New York,https://goldmansachs.com,False
+106,ZS Associates,Consulting,Service,Illinois,https://zs.com,False
+107,NXP,Electronics,Product,Netherlands,https://nxp.com,False
+108,Meesho,E-Commerce,Product,Bangalore,https://meesho.com,False
+109,MediaTek,Electronics,Product,Taiwan,https://mediatek.com,True
+110,Apple,Technology,Product,California,https://apple.com,True
+111,American Express,Finance,Service,New York,https://americanexpress.com,False
+112,American Express,Finance,Service,New York,https://americanexpress.com,True
+113,Adobe,Technology,Product,California,https://adobe.com,True
+114,JPMorgan Chase,Finance,Service,New York,https://jpmorgan.com,True
+115,EY,Consulting,Service,London,https://ey.com,False
+116,Swiggy,E-Commerce,Product,Bangalore,https://swiggy.com,False
+117,Blinkit,E-Commerce,Product,Gurgaon,https://blinkit.com,True
+118,PwC,Consulting,Service,London,https://pwc.com,False
+119,BCG,Consulting,Service,Boston,https://bcg.com,True
+120,Oracle,Technology,Product,Texas,https://oracle.com,True
+121,Oracle,Technology,Product,Texas,https://oracle.com,False
+122,Google,Technology,Product,California,https://google.com,False
+123,JPMorgan Chase,Finance,Service,New York,https://jpmorgan.com,False
+124,Intel,Technology,Product,California,https://intel.com,True
+125,TCS,IT Services,Service,Mumbai,https://tcs.com,False
+126,Infosys,IT Services,Service,Bangalore,https://infosys.com,False
+127,Apple,Technology,Product,California,https://apple.com,True
+128,PwC,Consulting,Service,London,https://pwc.com,False
+129,McKinsey,Consulting,Service,New York,https://mckinsey.com,False
+130,Microsoft,Technology,Product,Washington,https://microsoft.com,False
+131,Flipkart,E-Commerce,Product,Bangalore,https://flipkart.com,True
+132,Apple,Technology,Product,California,https://apple.com,True
+133,McKinsey,Consulting,Service,New York,https://mckinsey.com,True
+134,NVIDIA,Technology,Product,California,https://nvidia.com,True
+135,BCG,Consulting,Service,Boston,https://bcg.com,False
+136,McKinsey,Consulting,Service,New York,https://mckinsey.com,False
+137,TCS,IT Services,Service,Mumbai,https://tcs.com,False
+138,Qualcomm,Electronics,Product,California,https://qualcomm.com,True
+139,MediaTek,Electronics,Product,Taiwan,https://mediatek.com,False
+140,Meesho,E-Commerce,Product,Bangalore,https://meesho.com,True
+141,Infosys,IT Services,Service,Bangalore,https://infosys.com,True
+142,Tech Mahindra,IT Services,Service,Pune,https://techmahindra.com,True
+143,Wipro,IT Services,Service,Bangalore,https://wipro.com,False
+144,NXP,Electronics,Product,Netherlands,https://nxp.com,False
+145,Texas Instruments,Electronics,Product,Texas,https://ti.com,True
+146,Wipro,IT Services,Service,Bangalore,https://wipro.com,False
+147,EY,Consulting,Service,London,https://ey.com,False
+148,Accenture,Consulting,Service,Dublin,https://accenture.com,False
+149,Google,Technology,Product,California,https://google.com,True
+150,PwC,Consulting,Service,London,https://pwc.com,False

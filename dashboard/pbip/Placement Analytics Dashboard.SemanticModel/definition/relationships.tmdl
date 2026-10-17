@@ -1,0 +1,56 @@
+relationship deb5cea7-9d8a-4768-b58b-a423356fa517
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public applications'.application_date
+	toColumn: LocalDateTable_39e74325-8d85-41d7-bd6a-afb9771ad45f.Date
+
+relationship c978d862-0fc9-4a50-95b4-f0b02bf742e7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public interview_rounds'.round_date
+	toColumn: LocalDateTable_b60db782-20a0-4cbc-a845-89fbcef10e96.Date
+
+relationship 78f49911-e185-43d7-a273-2fddb7c2ac8e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public offers'.offer_date
+	toColumn: LocalDateTable_add1f8d3-8ce3-4560-851a-03329e81ac29.Date
+
+relationship 1547fdc3-ba61-4f88-a38c-804beadb892e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public placement_drives'.drive_date
+	toColumn: LocalDateTable_225d973a-7db3-4b4b-8303-dee0f4d50e90.Date
+
+relationship 59fcaceb-9053-4d0e-8063-7ab26a96a0e5
+	fromColumn: 'public applications'.drive_id
+	toColumn: 'public placement_drives'.drive_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 6eaf41da-6c1b-4080-a7d6-fdc19fc1609f
+	fromColumn: 'public interview_rounds'.application_id
+	toColumn: 'public applications'.application_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 37274c28-c355-4313-8055-acc59540e85b
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'public offers'.application_id
+	toColumn: 'public applications'.application_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 12a73ada-aacc-43f0-8116-d648726abcd1
+	fromColumn: 'public placement_drives'.company_id
+	toColumn: 'public companies'.company_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 2c047e21-e1fe-47eb-8a1a-c8b9a7e2801b
+	fromColumn: 'public students'.branch_id
+	toColumn: 'public branches'.branch_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 4ccfd8e9-66a1-428c-ba0b-e20d575254ec
+	fromColumn: 'public applications'.student_id
+	toColumn: 'public students'.student_id
+

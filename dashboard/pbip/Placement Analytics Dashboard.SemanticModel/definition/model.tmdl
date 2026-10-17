@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["public applications","public branches","public companies","public interview_rounds","public offers","public placement_drives","public students"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'public applications'
+ref table DateTableTemplate_96c15ab8-52e0-4230-bc70-67b4b48966e0
+ref table LocalDateTable_39e74325-8d85-41d7-bd6a-afb9771ad45f
+ref table 'public branches'
+ref table 'public companies'
+ref table 'public interview_rounds'
+ref table LocalDateTable_b60db782-20a0-4cbc-a845-89fbcef10e96
+ref table 'public offers'
+ref table LocalDateTable_add1f8d3-8ce3-4560-851a-03329e81ac29
+ref table 'public placement_drives'
+ref table LocalDateTable_225d973a-7db3-4b4b-8303-dee0f4d50e90
+ref table 'public students'
+
+ref cultureInfo en-US
+

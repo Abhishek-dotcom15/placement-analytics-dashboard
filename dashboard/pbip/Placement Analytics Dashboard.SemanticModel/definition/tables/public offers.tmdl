@@ -1,0 +1,67 @@
+table 'public offers'
+	lineageTag: 433b7563-4bed-4717-9f13-5d3f5d05332c
+
+	column offer_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e385269-ebe4-4fd1-a451-4fa1135f0763
+		summarizeBy: sum
+		sourceColumn: offer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column application_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ff9fbd9-cf8f-4e24-af2f-8c4fab66b15a
+		summarizeBy: none
+		sourceColumn: application_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column offered_ctc
+		dataType: double
+		lineageTag: 116e8df0-048d-4e71-b8cf-98cf0bcdce51
+		summarizeBy: sum
+		sourceColumn: offered_ctc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column offer_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c43b2d22-2b3b-4601-a1a6-6da9ca1e51f5
+		summarizeBy: none
+		sourceColumn: offer_date
+
+		variation Variation
+			isDefault
+			relationship: 78f49911-e185-43d7-a273-2fddb7c2ac8e
+			defaultHierarchy: LocalDateTable_add1f8d3-8ce3-4560-851a-03329e81ac29.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column accepted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dd2592f1-fa5c-429e-9e98-050b33043b53
+		summarizeBy: none
+		sourceColumn: accepted
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public offers' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost:5432", "placement_analytics"),
+				    public_offers = Source{[Schema="public",Item="offers"]}[Data]
+				in
+				    public_offers
+
+	annotation PBI_ResultType = Table
+
